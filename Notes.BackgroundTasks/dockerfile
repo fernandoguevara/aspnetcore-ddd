@@ -1,0 +1,25 @@
+FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS base
+WORKDIR /app
+
+FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
+WORKDIR /src
+
+COPY notes.sln notes.sln
+
+# Copy csproj and restore as distinct layers
+COPY Notes.API/Notes.API.csproj Notes.API/Notes.API.csproj
+COPY Notes.Domain/Notes.Domain.csproj Notes.Domain/Notes.Domain.csproj
+COPY Notes.Infrastructure/Notes.Infrastructure.csproj Notes.Infrastructure/Notes.Infrastructure.csproj
+COPY Notes.BackgroundTasks/Notes.BackgroundTasks.csproj Notes.BackgroundTasks/Notes.BackgroundTasks.csproj
+
+RUN dotnet restore notes.sln
+
+COPY . .
+WORKDIR /src/Notes.BackgroundTasks
+RUN dotnet publish --no-restore -c Release -o /app
+
+# Build runtime image
+FROM base
+WORKDIR /app
+COPY --from=build /app .
+ENTRYPOINT ["dotnet", "Notes.BackgroundTasks.dll"]

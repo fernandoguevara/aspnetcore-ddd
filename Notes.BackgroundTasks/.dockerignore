@@ -1,0 +1,7 @@
+**/bin
+**/obj
+**/vm
+.git
+.gitignore
+.vs
+.dockerignore
