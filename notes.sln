@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notes.Infrastructure", "Not
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notes.API", "Notes.API\Notes.API.csproj", "{FB5B1B22-D321-48A7-AC36-CC80DAA7C002}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.BackgroundTasks", "Notes.BackgroundTasks\Notes.BackgroundTasks.csproj", "{EE03FC28-E6A3-434A-B07F-8D0D8A8FAA5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notes.BackgroundTasks", "Notes.BackgroundTasks\Notes.BackgroundTasks.csproj", "{EE03FC28-E6A3-434A-B07F-8D0D8A8FAA5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Common", "Notes.Common\Notes.Common.csproj", "{D8AEF293-6BF8-4EFD-8204-81C5BA1F0A0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EE03FC28-E6A3-434A-B07F-8D0D8A8FAA5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE03FC28-E6A3-434A-B07F-8D0D8A8FAA5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE03FC28-E6A3-434A-B07F-8D0D8A8FAA5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8AEF293-6BF8-4EFD-8204-81C5BA1F0A0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8AEF293-6BF8-4EFD-8204-81C5BA1F0A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8AEF293-6BF8-4EFD-8204-81C5BA1F0A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8AEF293-6BF8-4EFD-8204-81C5BA1F0A0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

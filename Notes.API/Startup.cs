@@ -14,10 +14,12 @@ using Microsoft.OpenApi.Models;
 using Notes.API.Application.Services;
 using Notes.API.Infrastructure.AutofacModules;
 using Notes.API.Infrastructure.Filters;
+using Notes.Common.Email;
 using Notes.Infrastructure;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
+
 
 namespace Notes.API
 {

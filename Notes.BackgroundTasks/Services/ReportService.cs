@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Notes.BackgroundTasks.Queries;
+using Notes.Common.Email;
 using System;
 using System.Collections.Generic;
 using System.IO;

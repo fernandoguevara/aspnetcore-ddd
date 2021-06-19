@@ -18,7 +18,7 @@ namespace Notes.Domain.AggregatesModel.NoteAggregate
 
         public Email(string action) : this()
         {
-            _action = !string.IsNullOrWhiteSpace(_action) ? _action : throw new NoteDomainException(nameof(_action));
+            _action = !string.IsNullOrWhiteSpace(action) ? action : throw new NoteDomainException(nameof(action));
             _createdAt = DateTime.UtcNow;
         }
     }

@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Notes.Common\Notes.Common.csproj" />
     <ProjectReference Include="..\Notes.Infrastructure\Notes.Infrastructure.csproj" />
   </ItemGroup>
 
