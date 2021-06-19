@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Notes.API.Infrastructure.ActionResults;
 using Notes.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
@@ -56,7 +57,7 @@ namespace Notes.API.Infrastructure.Filters
                     json.DeveloperMessage = context.Exception;
                 }
 
-                context.Result = new ObjectResult(json);
+                context.Result = new InternalServerErrorObjectResult(json);
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             }
             context.ExceptionHandled = true;

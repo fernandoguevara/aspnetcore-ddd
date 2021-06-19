@@ -40,9 +40,5 @@
     <ProjectReference Include="..\Notes.Infrastructure\Notes.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Infrastructure\ActionResults\" />
-  </ItemGroup>
-
 
 </Project>
