@@ -1,10 +1,10 @@
 # ASP.NET Core Web API Domain Driven Design Example
 
-Just an example project where ddd is implemented with some other great patterns and architecture learnt from eShopOnContainers
+Just an example project where ddd is implemented with some other great patterns and architecture learnt from eShopOnContainers.
 
-The use case its just a simple web api who saves notes in a db and send some emails when they are created.
+The use case is just a simple web api which saves notes in a database and send some emails when they are created.
 
-And a background task project who generates a simple xlsx that you send by email.
+Background task project which generates a simple xlsx that you send by email.
 
 ## Architecture
 * .NET CORE 3.1 LTS(waiting for 5 tls)
@@ -16,7 +16,7 @@ And a background task project who generates a simple xlsx that you send by email
 * Multiple Database Vendors (specifically sql server and postgres)
 * Domain Events
 * Fluent Validation
-* Background task for little report generation
+* Background task for report generation
 * Repository Pattern
 * Unit of Work Pattern
 * Keycloak JWT User Roles for Web API Validation
@@ -26,9 +26,9 @@ And a background task project who generates a simple xlsx that you send by email
 * Swagger Implicit Authentication with Keycloak
 
 ## How to Run
-Basically you need to create a database(sql server or postgres), keycloak, elasticsearch , kibana if you want data visualization and of course run the project or create and run a docker image.
+Basically you need to create a database(sql server or postgres), keycloak, elasticsearch , and kibana if you want data visualization.
 
-You can use the Vagrantfile if you use Vagrant in your machine, its nice and easy to use for demo projects, the vm will need at least 3-4GB RAM if you intend to use kibana and elasticsearch.
+You can use the Vagrantfile if you use got Vagrant installed on your machine, it's nice and easy to use for demo projects, the virtual machine will need at least 3-4GB RAM if you intend to use kibana and elasticsearch.
 
 ## DISCLAIMER!
-Its just a demo project , not intended to use in production or following the best architecture, remember theres not silver bullet.
+It's just a demo project , not intended be used in production, remember there's not silver bullet.
