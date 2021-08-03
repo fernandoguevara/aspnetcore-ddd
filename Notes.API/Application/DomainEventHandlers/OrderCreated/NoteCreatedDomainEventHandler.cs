@@ -36,7 +36,7 @@ namespace Notes.API.Application.DomainEventHandlers.OrderCreated
             var email = _identityService.GetUserEmail();
 
             //comment out this only is you set the smtp variables with a valid email account
-            await _emailService.SendEmailAsync(email, "Note Created", "You've created a new Note!");
+            //await _emailService.SendEmailAsync(email, "Note Created", "You've created a new Note!");
 
             _logger.CreateLogger<NoteCreatedDomainEvent>()
                 .LogTrace("Email Sent for Note: {NoteId}"

@@ -42,7 +42,7 @@ namespace Notes.API.Application.Queries
 
         public async Task<IEnumerable<NoteDTO>> GetNotesAsync()
         {
-            string sql = "SELECT * FROM \"Note\"";
+            string sql = "SELECT * FROM \"Note\" order by \"ModifiedAt\"";
 
             using (var conn = DBConnectionFactory.MakeDBConnection(_connectionString))
             {

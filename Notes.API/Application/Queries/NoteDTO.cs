@@ -8,6 +8,7 @@ namespace Notes.API.Application.Queries
 {
     public class NoteDTO
     {
+        public Guid Id { get; set; }
         public Guid UserId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
@@ -16,6 +17,7 @@ namespace Notes.API.Application.Queries
         {
             return new NoteDTO
             {
+                Id = note.Id,
                 UserId = note.GetUserId,
                 Title = note.Title,
                 Description = note.Description

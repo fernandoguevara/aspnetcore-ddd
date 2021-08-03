@@ -36,6 +36,16 @@ namespace Notes.API
 
         public virtual IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(
+                    name: "AllowOrigin",
+                    builder =>{
+                        builder.AllowAnyOrigin()
+                                .AllowAnyMethod()
+                                .AllowAnyHeader();
+                    });
+            });
 
             services
                 .AddCustomController(Configuration)
@@ -57,6 +67,7 @@ namespace Notes.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+        
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -73,8 +84,9 @@ namespace Notes.API
                    c.OAuthAppName("Notes Swagger UI");
                });
 
-
             app.UseRouting();
+
+            app.UseCors("AllowOrigin");
 
             app.UseAuthentication();
             app.UseAuthorization();
@@ -83,6 +95,12 @@ namespace Notes.API
             {
                 endpoints.MapControllers();
             });
+        }
+
+        protected virtual void ConfigureAuth(IApplicationBuilder app)
+        {
+            app.UseAuthentication();
+            app.UseAuthorization();
         }
     }
 

@@ -40,6 +40,7 @@ namespace Notes.API.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<NoteDTO>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [Produces("application/json")]
         public async Task<IActionResult> GetNotesAsync()
         {
             var notes = await _noteQueries.GetNotesAsync();
@@ -52,6 +53,7 @@ namespace Notes.API.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(NoteDTO), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [Produces("application/json")]
         public async Task<IActionResult> GetNoteAsync(Guid noteId)
         {
             var note = await _noteQueries.GetNoteAsync(noteId);
@@ -63,6 +65,7 @@ namespace Notes.API.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(NoteDTO), (int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [Produces("application/json")]
         public async Task<ActionResult<NoteDTO>> CreateNoteAsync([FromBody] CreateNoteCommand command)
         {
             _logger.LogInformation(
@@ -81,6 +84,7 @@ namespace Notes.API.Controllers
         [HttpPost("simpler")]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [Produces("application/json")]
         public async Task<IActionResult> SimplerCreateNoteAsync([FromBody] CreateNoteCommand command)
         {
             var userId = _identityService.GetUserIdentity();
@@ -103,6 +107,7 @@ namespace Notes.API.Controllers
         [HttpPut]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [Produces("application/json")]
         public async Task<IActionResult> UpdateNoteAsync([FromBody] UpdateNoteRequest request, Guid noteId)
         {
             var note = await _noteRepository.FindByIdAsync(noteId);
@@ -123,6 +128,7 @@ namespace Notes.API.Controllers
         [HttpDelete]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [Produces("application/json")]
         public async Task<IActionResult> DeleteNoteAsync(Guid noteId)
         {
             var note = await _noteRepository.FindByIdAsync(noteId);
