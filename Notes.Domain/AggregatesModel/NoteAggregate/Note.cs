@@ -34,7 +34,7 @@ namespace Notes.Domain.AggregatesModel
             Description = !String.IsNullOrWhiteSpace(description) ? description : throw new ArgumentException(nameof(description));
             var time = DateTime.UtcNow;
 
-            if (IsTooLate(time)) throw new NoteDomainException("is too late go back to sleep :(");
+            if (IsTooLate(time)) throw new NoteDomainException("Its too late go back to sleep :(");
 
             _createdAt = time;
             _modifiedAt = time;
